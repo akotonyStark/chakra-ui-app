@@ -9,7 +9,8 @@ const Dashboard = () => {
         filter: 'blur(2px)',
         ':hover': {
             bgColor: 'purple',
-            color: 'white'
+            color: 'white',
+            cursor:'pointer'
         }
     }
   return (
