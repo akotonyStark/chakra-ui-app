@@ -3,7 +3,7 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import './App.css'
 import RootLayout from './layouts/RootLayout'
-import Dashboard from './pages/Dashboard'
+import Dashboard, { tasksLoader } from './pages/Dashboard'
 import Create from './pages/Create'
 import Profile from './pages/Profile'
 import Practise from './pages/Practise'
@@ -14,7 +14,7 @@ import Typography from './pages/Typography'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout/>}>
-       <Route index element={<Dashboard/>} />
+       <Route index element={<Dashboard/>} loader={tasksLoader}/>
        <Route path="create" element={<Create />} />
        <Route path="profile" element={<Profile />} />
        <Route path="practise" element={<Practise />} />

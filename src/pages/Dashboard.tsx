@@ -1,26 +1,50 @@
-import { Box, SimpleGrid, Text } from "@chakra-ui/react"
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Flex, Heading, HStack, IconButton, SimpleGrid, Text } from "@chakra-ui/react"
+import { useLoaderData } from "react-router-dom"
+import { Task } from "../types/Task.type"
+import { EditIcon, ViewIcon } from "@chakra-ui/icons"
 
+
+
+export const tasksLoader = async () => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+  return res.json()
+}
 
 const Dashboard = () => {
+  const tasks: any = useLoaderData()
+
   return (
-    <SimpleGrid p={5}  spacing={5} minChildWidth="200px">
-    <Box bg="white" h={200} border="1px solid">
-        <Text color={{base:'pink', md:'blue', lg:'green.900'}}>Hello</Text>
-    </Box>
-    <Box bg="white" h={200} border="1px solid"></Box>
-    <Box bg="white" h={200} border="1px solid"></Box>
-    <Box bg="white" h={200} border="1px solid"></Box>
+    <SimpleGrid p={10} spacing={10} minChildWidth="400px">
+      {tasks && tasks?.map((task: Task) => {
+        return (
+          <Card key={task.id} bg="white" h={320} borderTop="8px" borderColor={'teal'}>
 
-    <Box bg="white" h={200} border="1px solid"></Box>
-    <Box bg="white" h={200} border="1px solid"></Box>
-    <Box bg="white" h={200} border="1px solid"></Box>
-    <Box bg="white" h={200} border="1px solid"></Box>
+            <CardHeader>
+              <Flex alignItems={'center'} gap={5} >
+                <HStack>
+                  <Box w={50} h={50}>
+                    <Text>Av</Text>
+                  </Box>
+                  <Box>
+                    <Heading size={'md'}>{task.title.substring(0, 5)}</Heading>
+                  </Box>
+                </HStack>
+              </Flex>
 
-    <Box bg="white" h={200} border="1px solid"></Box>
-    <Box bg="white" h={200} border="1px solid"></Box>
-    <Box bg="white" h={200} border="1px solid"></Box>
-    <Box bg="white" h={200} border="1px solid"></Box>
-</SimpleGrid>
+            </CardHeader>
+            <CardBody color={'teal'}>{task.body}</CardBody>
+            <Divider borderColor={'gray.200'}/>
+            <CardFooter>
+              <HStack>
+                <Button size={'sm'} variant="ghost" leftIcon={<ViewIcon/>}>Like</Button>
+                <Button size={'sm'} leftIcon={<EditIcon/>}>Comment</Button>
+              </HStack>
+            </CardFooter>
+          </Card>)
+      })}
+
+
+    </SimpleGrid>
   )
 }
 
