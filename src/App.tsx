@@ -8,6 +8,7 @@ import Create from './pages/Create'
 import Profile from './pages/Profile'
 import Practise from './pages/Practise'
 import GridLayout from './pages/GridLayout'
+import Typography from './pages/Typography'
 
 
 const router = createBrowserRouter(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
        <Route path="practise" element={<Practise />} />
 
        <Route path="grid-layout" element={<GridLayout />} />
+       <Route path="typography" element={<Typography />} />
     </Route>
   )
 )

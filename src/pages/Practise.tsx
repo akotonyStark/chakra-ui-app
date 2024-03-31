@@ -17,14 +17,16 @@ const Practise = () => {
                     GridLayout
                 </Box>
             </Link>
-            <Box bg="white" h={100} border="1px solid"></Box>
-            <Box bg="white" h={100} border="1px solid"></Box>
-            <Box bg="white" h={100} border="1px solid"></Box>
+            <Link to={'/typography'}>
+                <Box bg="white" h={100} border="1px solid" sx={boxStyles}>Typography</Box>
+            </Link>
+            <Box bg="white" h={100} border="1px solid" sx={boxStyles}></Box>
+            <Box bg="white" h={100} border="1px solid" sx={boxStyles}></Box>
 
-            <Box bg="white" h={100} border="1px solid"></Box>
-            <Box bg="white" h={100} border="1px solid"></Box>
-            <Box bg="white" h={100} border="1px solid"></Box>
-            <Box bg="white" h={100} border="1px solid"></Box>
+            <Box bg="white" h={100} border="1px solid" sx={boxStyles}></Box>
+            <Box bg="white" h={100} border="1px solid" sx={boxStyles}></Box>
+            <Box bg="white" h={100} border="1px solid" sx={boxStyles}></Box>
+            <Box bg="white" h={100} border="1px solid" sx={boxStyles}></Box>
 
             <Box bg="white" h={100} border="1px solid"></Box>
             <Box bg="white" h={100} border="1px solid"></Box>

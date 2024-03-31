@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import { Grid, GridItem } from '@chakra-ui/react'
 
@@ -6,10 +6,16 @@ const RootLayout = () => {
     return (
         <div>
             <Grid templateColumns={'repeat(6, 1fr)'}>
-                <GridItem as='aside' colSpan={1} bg="teal" height="100vh" p={20}>
-                    <span>Sidebar</span>
+                <GridItem 
+                    as='aside' 
+                    colSpan={{base:6, lg:2, xl:1}}
+                    bg="teal" 
+                    height={{ lg: "100vh"}} p={{base:'20px', lg:'30px'}}>
+                    <Link to={'/'}>Dashboard</Link>
                 </GridItem>
-                <GridItem colSpan={5}>
+                <GridItem 
+                    as={'main'}
+                    colSpan={{base:6, lg:4, xl:5}}>
                     <Navbar />
                     <Outlet />
                 </GridItem>
