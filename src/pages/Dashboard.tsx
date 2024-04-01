@@ -14,7 +14,7 @@ const Dashboard = () => {
   const tasks: any = useLoaderData()
 
   return (
-    <SimpleGrid p={10} spacing={10} minChildWidth="400px">
+    <SimpleGrid p={10} spacing={10} minChildWidth="400px" h={'100vh'} minH={'95vh'} overflow={'auto'}>
       {tasks && tasks?.map((task: Task) => {
         return (
           <Card key={task.id} bg="white" h={320} borderTop="8px" borderColor={'teal'}>

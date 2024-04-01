@@ -7,7 +7,7 @@ const Navbar = () => {
             <Spacer />
 
             <HStack spacing={'20px'}>
-                <Box bg={'gray.200'} p={10}>A</Box>
+                <Box bg={'gray.200'} p={5} w="50px" height="50px" borderRadius={"50%"} backgroundImage={'../img/mario.png'} bgSize={'contain'}></Box>
                 <Text>user@gmail.com</Text>
                 <Button colorScheme='teal'>Logout</Button>
             </HStack>
