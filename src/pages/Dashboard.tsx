@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Flex, Heading, HStack, IconButton, SimpleGrid, Text } from "@chakra-ui/react"
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Flex, Heading, HStack, SimpleGrid, Text } from "@chakra-ui/react"
 import { useLoaderData } from "react-router-dom"
 import { Task } from "../types/Task.type"
 import { EditIcon, ViewIcon } from "@chakra-ui/icons"

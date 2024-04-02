@@ -13,12 +13,7 @@ const Navbar = () => {
             </HStack>
 
         </Flex>
-        // <Flex bg="gray.200" justify={'space-between'} wrap={'wrap'} gap={2}>
-        //     <Box w={150} h={100} bg={'red'}></Box>
-        //     <Box w={150} h={100} bg={'blue'}></Box>
-        //     <Box w={150} h={100} bg={'green'}></Box>
-        //     <Box w={150} h={100} bg={'yellow'}></Box>
-        // </Flex>
+ 
     )
 }
 
