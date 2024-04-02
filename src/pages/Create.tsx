@@ -1,14 +1,18 @@
 import { Box, Button, Checkbox, Flex, FormControl, FormHelperText, FormLabel, HStack, Input, Select, Stack, Textarea } from "@chakra-ui/react"
-import { Form } from "react-router-dom"
+import { Form, useActionData } from "react-router-dom"
 
 const Create = () => {
+  
+  const handleSubmit = () => {
+    console.log({payload:{}})
+  }
   return (
     <Box maxWidth={600} px={20}>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <FormControl isRequired mb={10}>
           <FormLabel>Task Name:</FormLabel>
           <Input type="text" name="nameOfTask" />
-          <FormHelperText>Enter descriptive task title</FormHelperText>
+          <FormHelperText></FormHelperText>
         </FormControl>
 
         <FormControl isRequired mb={10}>
