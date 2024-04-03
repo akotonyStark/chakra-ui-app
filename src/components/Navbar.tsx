@@ -1,18 +1,18 @@
 import { UnlockIcon } from "@chakra-ui/icons"
-import { Box, Text, Button, Flex, Heading, Spacer, HStack, useToast } from "@chakra-ui/react"
-
+import { Box, Text, Button, Flex, Heading, Spacer, HStack, useToast, Avatar, AvatarBadge } from "@chakra-ui/react"
+import mario from "../../src/assets/img/mario.png"
 const Navbar = () => {
     const toast = useToast()
 
     const handleLogout = () => {
         toast({
-            title:'Logging out',
+            title: 'Logging out',
             description: 'Successfully logged out',
             duration: 3000,
             isClosable: true,
             status: 'success',
-            position:'top-right',
-            icon: <UnlockIcon/>
+            position: 'top-right',
+            icon: <UnlockIcon />
         })
     }
     return (
@@ -21,13 +21,16 @@ const Navbar = () => {
             <Spacer />
 
             <HStack spacing={'20px'}>
-                <Box bg={'gray.200'} p={5} w="50px" height="50px" borderRadius={"50%"} backgroundImage={'../img/mario.png'} bgSize={'contain'}></Box>
+
+                <Avatar src={mario} bg={'gold'} name="Mario">
+                    <AvatarBadge width="1.3em" bg={'teal.500'}><Text fontSize={'small'} color={'white'}>4</Text></AvatarBadge>
+                </Avatar>
                 <Text>user@gmail.com</Text>
                 <Button colorScheme='teal' onClick={handleLogout}>Logout</Button>
             </HStack>
 
         </Flex>
- 
+
     )
 }
 

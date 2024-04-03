@@ -1,7 +1,11 @@
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Flex, Heading, HStack, SimpleGrid, Text } from "@chakra-ui/react"
+import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Divider, Flex, Heading, HStack, SimpleGrid } from "@chakra-ui/react"
 import { useLoaderData } from "react-router-dom"
 import { Task } from "../types/Task.type"
 import { EditIcon, ViewIcon } from "@chakra-ui/icons"
+import mario from "../../src/assets/img/mario.png"
+import yoshi from "../../src/assets/img/yoshi.png"
+import luigi from "../../src/assets/img/luigi.png"
+import peach from "../../src/assets/img/peach.png"
 
 
 
@@ -10,8 +14,10 @@ export const tasksLoader = async () => {
   return res.json()
 }
 
+const images = [mario, yoshi, luigi, peach]
 const Dashboard = () => {
   const tasks: any = useLoaderData()
+
 
   return (
     <SimpleGrid p={10} spacing={10} minChildWidth="400px" h={'100vh'} minH={'95vh'} overflow={'auto'}>
@@ -22,9 +28,7 @@ const Dashboard = () => {
             <CardHeader>
               <Flex alignItems={'center'} gap={5} >
                 <HStack>
-                  <Box w={50} h={50}>
-                    <Text>Av</Text>
-                  </Box>
+                  <Avatar src={images[Math.floor(Math.random()*4)]}/>
                   <Box>
                     <Heading size={'md'}>{task.title.substring(0, 5)}</Heading>
                   </Box>
