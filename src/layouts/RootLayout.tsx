@@ -10,7 +10,7 @@ const RootLayout = () => {
                 <GridItem 
                     as='aside' 
                     colSpan={{base:6, lg:2, xl:1}}
-                    bg="teal" 
+                    bg="brand.200"
                     height={{ lg: "100vh"}} p={{base:'20px', lg:'30px'}}>
                     
                     <Sidebar/>

@@ -1,5 +1,5 @@
 import { UnlockIcon } from "@chakra-ui/icons"
-import { Box, Text, Button, Flex, Heading, Spacer, HStack, useToast, Avatar, AvatarBadge } from "@chakra-ui/react"
+import { Text, Button, Flex, Heading, Spacer, HStack, useToast, Avatar, AvatarBadge } from "@chakra-ui/react"
 import mario from "../../src/assets/img/mario.png"
 const Navbar = () => {
     const toast = useToast()
